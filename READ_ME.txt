@@ -1,5 +1,3 @@
-# RSIRL
-
 ########## RISK-SENSITIVE INVERSE REINFORCEMENT LEARNING VIA SEMI- AND NON-PARAMETRIC METHODS ###########
 
 The directory contains the scripts and data to reproduce the results presented in the paper:
@@ -59,7 +57,6 @@ The gradient-based algorithm is implemented in subgradientdescent.m
 - Multi-Parametric Toolbox 3.0
 - Mosek solver
 - Yalmip 
-
 
 
 
