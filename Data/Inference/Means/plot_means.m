@@ -1,4 +1,4 @@
-load('means_karen.mat');
+load('means_p2.mat');
 
 for k=1:5
     plot(0.1*(1:15), means_2(k,16:30), 'LineWidth', 4);

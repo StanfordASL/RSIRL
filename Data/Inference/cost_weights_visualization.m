@@ -1,6 +1,6 @@
-load('results_N_2_ed_s.mat')
+load('results_N_2_p2_s.mat')
 infres_RS = infres;
-load('results_neutral_N_2_ed_s.mat')
+load('results_neutral_N_2_p2_s.mat')
 infres_RN = infres;
 
 wc_RS = infres_RS.wc_f;
