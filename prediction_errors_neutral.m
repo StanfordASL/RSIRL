@@ -1,3 +1,26 @@
+%%
+clear; close all; clc;
+
+%% set params
+
+N = 2;
+name_str = 'p2';
+dt = 0.1; % time step discretization
+K = 15; % number of time steps within a decision stage
+overlap = 8; % overlap between robot's and human's decisions
+
+%% load means
+
+load(['Data/Inference/Means/means_', num2str(N),'_',name_str,'.mat']);
+
+%% Process test set
+
+check_offset = 0;
+
+if (~check_offset)
+    load(['Data/Inference/Means/k_delay_test_',name_str,'.mat'], 'k_delay');
+end
+process_test_data;
 
 %% Load results
 load(['Data/Inference/results_neutral_N_',num2str(N),'_',name_str,'.mat'], 'p_true', 'infres', 'par', 'disturbances', 'dynamics', 'beta');
@@ -61,6 +84,8 @@ for i=1:numExps
     err_soft_y_n(i) = norm(x_soft_i(2,:) - x_i(2,:));
 end
 numExps_neutral = numExps;
+
+%%
 
 save(['Data/Inference/errs_neutral_N_',num2str(N),'_', name_str,'.mat'], 'B_weights_n','K','numExps_neutral', 'err_soft_x_n', 'err_soft_y_n', 'err_x_n', 'err_y_n', 'err_vx_n', 'err_vy_n', 'x_pred_n', 'y_pred_n', 'theta_pred_n', 'v_pred_n');
 
