@@ -6,7 +6,7 @@ name_str = 'p2';
 K = 15; overlap = 8;
 
 %%%%%%%%%%%%%% Parameters for processing and learning %%%%%%%%%%%%%%%%%
-N = 1;
+N = 2;
 k_delay = 3; % offset (tune it manually)
 check_offset = false;
 if (~check_offset)
@@ -40,6 +40,8 @@ for i=1:numExps
     vx_rel(1,:,i) = x_expert(7,t_i) - v_pred(1,:,i).*cos(theta_pred(1,:,i));
     vx_rel_n(1,:,i) = x_expert(7,t_i) - v_pred_n(1,:,i).*cos(theta_pred_n(1,:,i));
 end
+
+%%
 
 save(['Data/Inference/Performance/perf_N_',num2str(N),'_',name_str,'.mat']) ;
 
